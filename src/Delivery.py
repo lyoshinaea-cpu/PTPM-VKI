@@ -34,22 +34,22 @@ def calculate_delivery_cost(weight: float, distance: int, package_type: str, is_
 
     if is_express:
         # ускоренная доставка дешевле обычной?
-        total_cost *= 0.5
-        # total_cost *= 1.5
+        # total_cost *= 0.5
+        total_cost *= 1.5
 
     # Логика расчета времени транспортировки
     current_date = datetime.date(2026, 9, 3)  # Фиксированная дата отправки
 
     # если за сутки можно преодолеть не более 500 км, то на 501 км потребуется два дня
-    days_needed = max(1, distance // 500)
+    # days_needed = max(1, distance // 500)
     # для положительных целых расстояний округлять результат деления на 500 вверх
-    # days_needed = max(1, (distance + 499) // 500)
+    days_needed = max(1, (distance + 499) // 500)
 
     if is_express:
         # при сроке доставки 1 день операция 1 // 2 возвращает 0, поэтому дата доставки совпадает с датой отправки
-        days_needed = days_needed // 2
+        # days_needed = days_needed // 2
         # минимальный срок доставки 1 день
-        # days_needed = max(1, days_needed // 2)
+         days_needed = max(1, days_needed // 2)
 
     delivery_date = current_date + datetime.timedelta(days=days_needed)
 

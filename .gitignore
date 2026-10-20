@@ -1,14 +1,17 @@
 # Виртуальное окружение
-venv/
-ENV/
-env/
-.idea/
-# Кэш компиляции Python (создается при запусках unittest)
-**/__pycache__/
-*.pyc
-*.pyo
-*.pyd
+.venv/
 
-# Локальные системные файлы операционных систем
-.DS_Store
-Thumbs.db
+# Результаты измерения покрытия тестами
+.coverage
+.coverage.*
+htmlcov/
+
+# Локальная база данных SQLite
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Логи приложения
+Logs/
+*.log
