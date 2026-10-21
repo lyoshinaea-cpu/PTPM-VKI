@@ -64,15 +64,18 @@ def calculate_coordinates(a, b, c):
     max_y = max(y for x, y in points)
     width = max_x - min_x
     height = max_y - min_y
-    scale_x = 90 / width
-    scale_y = 90 / height
-    scale = min(scale_x, scale_y)
+    if height == 0:
+        scale = 100 / width
+    else:
+        scale_x = 100 /  width
+        scale_y = 100 / height
+        scale = min(scale_x, scale_y)
 
     coordinates = []
 
     for x, y in points:
-        new_x = 5 + (x - min_x) * scale
-        new_y = 5 + (y - min_y) * scale
+        new_x = x * scale
+        new_y = y * scale
         coordinates.append(
             (
                 int(round(new_x)),

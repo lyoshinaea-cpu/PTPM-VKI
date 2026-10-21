@@ -56,8 +56,6 @@ def main():
                     f"Ошибка: введены нечисловые данные. "
                     f"Результат: тип='{triangle_type}', координаты={coordinates}"
                 )
-                print(f"Тип треугольника: {triangle_type}")
-                print(f"Координаты вершин: {coordinates}")
                 continue
             a, b, c = sides
 
@@ -73,8 +71,6 @@ def main():
                     f"Ошибка: стороны должны быть положительными. "
                     f"Результат: тип='{triangle_type}', координаты={coordinates}"
                 )
-                print(f"Тип треугольника: {triangle_type}")
-                print(f"Координаты вершин: {coordinates}")
                 continue
 
             if not is_triangle(a, b, c):
@@ -89,18 +85,14 @@ def main():
                     f"Ошибка: стороны не образуют треугольник. "
                     f"Результат: тип='{triangle_type}', координаты={coordinates}"
                 )
-                print(f"Тип треугольника: {triangle_type}")
-                print(f"Координаты вершин: {coordinates}")
                 continue
+
             triangle_type = get_triangle_type(a, b, c)
             coordinates = calculate_coordinates(a, b, c)
             logging.info(
                 f"Успешный запрос: A={a}, B={b}, C={c}. "
                 f"Результат: тип='{triangle_type}', координаты={coordinates}"
             )
-
-            print(f"Тип треугольника: {triangle_type}")
-            print(f"Координаты вершин: {coordinates}")
 
         except Exception:
             logging.exception(
