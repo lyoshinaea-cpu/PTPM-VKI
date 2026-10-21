@@ -64,6 +64,7 @@ def calculate_coordinates(a, b, c):
     max_y = max(y for x, y in points)
     width = max_x - min_x
     height = max_y - min_y
+
     if height == 0:
         scale = 100 / width
     else:
