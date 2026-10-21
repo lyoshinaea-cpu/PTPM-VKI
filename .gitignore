@@ -1,0 +1,21 @@
+# === PyCharm / JetBrains IDE ===
+.idea/
+*.iml
+*.iws
+
+# === Папка с логами (Logs) ===
+/Logs/
+*.log
+
+# === Python (кэш, виртуальное окружение и сборка) ===
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# === Системные файлы ===
+.DS_Store
+Thumbs.db
